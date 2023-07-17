@@ -19,7 +19,6 @@ namespace ArtisanBackEnd.Application.DTOs
         public string Country { get; set; }
         public string LocalGovernment {get; set;}
         public DateTime DateOfBirth { get; set; }
-        public string CustomerNumber{get; set;}
         public string? ProfileImage { get; set; }
     }
 }

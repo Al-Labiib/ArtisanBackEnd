@@ -20,9 +20,10 @@ namespace ArtisanBackEnd.Controllers
         public IActionResult CreateArtisan([FromForm] CreateArtisanRequestModel request)
         {
             var forms = HttpContext.Request.Form;
-            if(forms.Count > 0)
+            if( forms != null && forms.Count > 0)
             {
-                string imageDirectory = Path.Combine(_webHostEnviroment.WebRootPath, "Images"); ;
+                string imageDirectory = Path.Combine(_webHostEnviroment.WebRootPath, "Images");
+                Directory.CreateDirectory(imageDirectory);
                 foreach(var file in forms.Files)
                 {
                     FileInfo info = new FileInfo(file.FileName);

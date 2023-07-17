@@ -14,6 +14,14 @@ namespace ArtisanBackEnd.Application.Services
         }
         public BaseResponse CreateCustomer(CreateCustomerRequestModel request)
         {
+            if (request == null)
+            {
+                return new BaseResponse
+                {
+                    Message = "Information cannot be empty!",
+                    Status= false
+                };
+            }
             var user = new User
             {
                 FirstName = request.FirstName,

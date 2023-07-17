@@ -12,7 +12,7 @@ namespace ArtisanBackEnd.Application.DTOs
         public string UserName {get; set; }
         public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
-        public string CustomerNumber {get; set;}
+        public string? CustomerNumber {get; set;}
         public string Email { get; set; }
         public Address Address { get; set; }
         public DateTime DateOfBirth { get; set; }

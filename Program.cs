@@ -34,6 +34,9 @@ builder.Services.AddScoped<IRepository, BaseRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IArtisanService, ArtisanService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IContractService, ContractService>();
+builder.Services.AddScoped<IRateService, RateService>();
 
 // builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 // {

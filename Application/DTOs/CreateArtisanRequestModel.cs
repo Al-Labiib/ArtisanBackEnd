@@ -19,8 +19,8 @@ namespace ArtisanBackEnd.Application.DTOs
         public string LocalGovernment {get; set;}
         public DateTime DateOfBirth { get; set; }
         public JobCategory jobCategory {get; set;}
-        public IFormFile? ProfileImage { get; set; }
-        public IFormFile CertificateImage {get; set;}
+        public string? ProfileImage { get; set; }
+        public string? CertificateImage {get; set;}
         public string UserName {get; set;}
     }
 }

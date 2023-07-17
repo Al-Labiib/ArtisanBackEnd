@@ -14,7 +14,14 @@ namespace artisanBackEnd.Application.Services
         }
         public BaseResponse CreateArtisan(CreateArtisanRequestModel request)
         {
-    
+            if (request == null)
+            {
+                return new BaseResponse
+                {
+                    Message = "Information cannot be empty!",
+                    Status= false
+                };
+            }
             var user = new User
             {
                 FirstName = request.FirstName,
@@ -41,7 +48,7 @@ namespace artisanBackEnd.Application.Services
                 JobCategory = request.jobCategory,
                 UserId = user.Id,
                 User= user,
-                ProfileImage = request.ProfileImage.
+                ProfileImage = request.ProfileImage,
                 CertificateImage = request.CertificateImage,
             };
             var address = new Address

@@ -7,7 +7,7 @@ namespace ArtisanBackEnd.Domain.Entities
         public string? ProfileImage {get; set;}
         public int WalletId {get; set;}
         public Wallet Wallet {get; set;}
-        public string CustomerNumber {get; set;}
+        public string? CustomerNumber {get; set;}
         public ICollection<JobPost> JobPosts {get; set;}
         public ICollection<Booking> Bookings {get; set;}
         public ICollection<Contract> Contracts {get; set;}

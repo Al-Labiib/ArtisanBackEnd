@@ -18,23 +18,23 @@ namespace ArtisanBackEnd.Controllers
         [HttpPost("CreateCustomer")]
         public IActionResult CreateCustomer([FromForm] CreateCustomerRequestModel request)
         {
-            var forms = HttpContext.Request.Form;
-            if(forms.Count > 0)
-            {
-                string imageDirectory = Path.Combine(_webHostEnviroment.WebRootPath, "Images"); ;
-                foreach(var file in forms.Files)
-                {
-                    FileInfo info = new FileInfo(file.FileName);
-                    string imageName = Guid.NewGuid().ToString() + info.Extension;
-                    string path = Path.Combine(imageDirectory, imageName);
-                    using (var fileStream = new FileStream(path, FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
-                    request.ProfileImage= imageName;
-
-                }
-            }
+            // var forms = HttpContext.Request.Form;
+            // if(forms.Count > 0)
+            // {
+            //     string imageDirectory = Path.Combine(_webHostEnviroment.WebRootPath, "Images"); 
+            //     Directory.CreateDirectory(imageDirectory);
+            //     foreach(var file in forms.Files)
+            //     {
+            //         FileInfo info = new FileInfo(file.FileName);
+            //         string imageName = Guid.NewGuid().ToString() + info.Extension;
+            //         string path = Path.Combine(imageDirectory, imageName);
+            //         using (var fileStream = new FileStream(path, FileMode.Create))
+            //         {
+            //             file.CopyTo(fileStream);
+            //         }
+            //         request.ProfileImage = (imageName);
+            //     }
+            // }
             var response = _customerService.CreateCustomer(request);
             return response.Status? Ok(response) : BadRequest(response);
         }

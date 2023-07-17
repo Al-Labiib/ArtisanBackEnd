@@ -14,5 +14,6 @@ namespace ArtisanBackEnd.Controllers
             _contractService = contractService;
             _webHostEnviroment = webHostEnvironment;
         }
+        
     }
 }
