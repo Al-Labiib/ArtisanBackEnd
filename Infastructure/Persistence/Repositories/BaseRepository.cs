@@ -63,6 +63,14 @@ namespace ArtisanBackEnd.Infastructure.Persistence.Repositories
             return _artisanBackendDbContext.Customers.Include(x => x.User).ToList();
         }
 
+        public Role GetRole(Expression<Func<Role, bool >> expression)
+        {
+            return _artisanBackendDbContext.Roles.SingleOrDefault(expression);
+        }
+        public Role GetAllRoles(Expression<Func<Role, bool>> expression)
+        {
+            return _artisanBackendDbContext.Roles.SingleOrDefault(expression);
+        }
         public Booking GetBooking(Expression<Func<Booking, bool>> expression)
         {
             return _artisanBackendDbContext.Bookings.SingleOrDefault(expression);
@@ -91,6 +99,11 @@ namespace ArtisanBackEnd.Infastructure.Persistence.Repositories
         public IList<Rate> GetAllRatings(Expression<Func<Rate, bool>> expression = null)
         {
             return _artisanBackendDbContext.Rates.ToList();
+        }
+
+        IList<Role> IRepository.GetAllRoles(Expression<Func<Role, bool>> expression)
+        {
+            throw new NotImplementedException();
         }
     }
 }

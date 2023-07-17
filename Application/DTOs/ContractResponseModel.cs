@@ -3,7 +3,7 @@ using ArtisanBackEnd.Domain.Enums;
 
 namespace ArtisanBackEnd.Application.DTOs
 {
-    public class ContractResponseModel
+    public class ContractResponseModel : BaseResponse
     {
         public int ArtisanId {get; set;}
         public Artisan Artisan {get; set;}

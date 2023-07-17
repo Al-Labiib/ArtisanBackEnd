@@ -45,7 +45,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse DeleteBooking(int id)
         {
-            var booking = _bookingRepository.GetBooking(x => x.Id == id);
+            var booking = _bookingRepository.Get<Booking>(x => x.Id == id);
 
             _bookingRepository.Delete<Booking>(booking);
             // _bookingRepository.Delete<User>(artisan.User);
@@ -61,7 +61,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BookingResponseModel GetBookingById(int id)
         {
-            var booking = _bookingRepository.GetBooking(x => x.Id == id);
+            var booking = _bookingRepository.Get<Booking>(x => x.Id == id);
 
             if (booking == null)
             {
@@ -113,7 +113,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse UpdateBooking(int id, UpdateBookingRequestModel request)
         {
-            var booking = _bookingRepository.GetBooking(x => x.Id == id);
+            var booking = _bookingRepository.Get<Booking>(x => x.Id == id);
 
             if(booking.BookingStatus != (BookingStatus)1)
             {

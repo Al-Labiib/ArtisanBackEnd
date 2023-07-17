@@ -51,7 +51,7 @@ namespace ArtisanBackEnd.Application.Services
         public BaseResponse UpdateRating(int id, UpdateRatingRequestModel request)
         {
             
-            var rate = _rateRepository.GetRate(x => x.Id == id);
+            var rate = _rateRepository.Get<Rate>(x => x.Id == id);
             rate.RateMarks = request.RateMarks;
             rate.RateComment = request.RateComment;
             rate.RateReview = request.RateReview;

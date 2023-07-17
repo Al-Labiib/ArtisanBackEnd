@@ -49,7 +49,7 @@ namespace artisanBackEnd.Application.Services
                 UserId = user.Id,
                 User= user,
                 ProfileImage = request.ProfileImage,
-                CertificateImage = request.CertificateImage,
+                // CertificateImage = request.CertificateImage,
             };
             var address = new Address
             {
@@ -74,7 +74,7 @@ namespace artisanBackEnd.Application.Services
 
         public BaseResponse DeleteArtisan(int id)
         {
-            var artisan = _artisanRepository.GetArtisan(x => x.Id == id);
+            var artisan = _artisanRepository.Get<Artisan>(x => x.Id == id);
 
             _artisanRepository.Delete<Artisan>(artisan);
             _artisanRepository.Delete<User>(artisan.User);
@@ -90,7 +90,7 @@ namespace artisanBackEnd.Application.Services
 
         public ArtisanResponseModel GetArtisanByArtisanNumber(string artisanNumber)
         {
-            var artisan = _artisanRepository.GetArtisan(x=> x.ArtisanNumber == artisanNumber);
+            var artisan = _artisanRepository.Get<Artisan>(x=> x.ArtisanNumber == artisanNumber);
             if(artisan == null)
             {
                 return new ArtisanResponseModel
@@ -122,7 +122,7 @@ namespace artisanBackEnd.Application.Services
 
         public ArtisanResponseModel GetArtisanById(int id)
         {
-            var artisan = _artisanRepository.GetArtisan(x => x.Id == id);
+            var artisan = _artisanRepository.Get<Artisan>(x => x.Id == id);
 
             if (artisan == null)
             {
@@ -180,7 +180,7 @@ namespace artisanBackEnd.Application.Services
 
         public BaseResponse UpdateArtisan(int id, UpdateArtisanRequestModel request)
         {
-            var artisan = _artisanRepository.GetArtisan(x => x.Id == id);
+            var artisan = _artisanRepository.Get<Artisan>(x => x.Id == id);
 
             artisan.User.PhoneNumber = request.PhoneNumber;
             artisan.User.Address = request.Address;
@@ -205,7 +205,7 @@ namespace artisanBackEnd.Application.Services
 
         public BaseResponse UpdatePassword(int id, UpdatePasswordRequestModel password)
         {
-            var artisan = _artisanRepository.GetArtisan(x => x.Id == id);
+            var artisan = _artisanRepository.Get<Artisan>(x => x.Id == id);
 
             if (password.Password != null)
             {
@@ -220,6 +220,7 @@ namespace artisanBackEnd.Application.Services
                         Message = "Passwords do not match",
                         Status = false
                     };
+
                 }
             }
             else
@@ -246,7 +247,8 @@ namespace artisanBackEnd.Application.Services
             {
                 Message = "Password updated successfully",
                 Status = true
-            };
-        }
+            }; 
+            
+        } 
     }
 }

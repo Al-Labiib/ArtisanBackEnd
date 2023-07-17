@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\031acd73-37e9-4fa9-a87c-7429e78e1d92.jpg",
+      "PackagePath": "staticwebassets\\Images\\031acd73-37e9-4fa9-a87c-7429e78e1d92.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\0d470721-93ee-462f-b8ae-4f2b3679bad5.jpg",
+      "PackagePath": "staticwebassets\\Images\\0d470721-93ee-462f-b8ae-4f2b3679bad5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\22c505a3-3631-4a61-b862-c966e33b5c91.jpg",
+      "PackagePath": "staticwebassets\\Images\\22c505a3-3631-4a61-b862-c966e33b5c91.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\237de3d9-2148-4c5b-aa2c-696ace0453d0.jpg",
+      "PackagePath": "staticwebassets\\Images\\237de3d9-2148-4c5b-aa2c-696ace0453d0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\3050fd0c-4d0d-44c1-bbae-04e34ec5be9b.jpg",
+      "PackagePath": "staticwebassets\\Images\\3050fd0c-4d0d-44c1-bbae-04e34ec5be9b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\308bdd0c-a19f-4ec3-897e-8ef2f284a5d8.jpg",
+      "PackagePath": "staticwebassets\\Images\\308bdd0c-a19f-4ec3-897e-8ef2f284a5d8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\6635f3f4-624b-40be-8446-5b4639804305.jpg",
+      "PackagePath": "staticwebassets\\Images\\6635f3f4-624b-40be-8446-5b4639804305.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\7d25995c-2dcf-45df-8c12-eb9b0921f653.jpg",
+      "PackagePath": "staticwebassets\\Images\\7d25995c-2dcf-45df-8c12-eb9b0921f653.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\87f8da83-4ff8-4a03-a55d-6efa5bb0b5b8.jpg",
+      "PackagePath": "staticwebassets\\Images\\87f8da83-4ff8-4a03-a55d-6efa5bb0b5b8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\9571bf30-4d3e-4fad-9c71-7afef3afbd92.jpg",
+      "PackagePath": "staticwebassets\\Images\\9571bf30-4d3e-4fad-9c71-7afef3afbd92.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\df24188f-5ad8-4e4d-8414-82dc25ec0f1b.jpg",
+      "PackagePath": "staticwebassets\\Images\\df24188f-5ad8-4e4d-8414-82dc25ec0f1b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\ea221c28-d371-42ad-a45c-e5037d6ca685.jpg",
+      "PackagePath": "staticwebassets\\Images\\ea221c28-d371-42ad-a45c-e5037d6ca685.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\ArtisanBackEnd\\wwwroot\\Images\\f7b6361a-4625-4bd5-a2fa-b58ee023deee.jpg",
+      "PackagePath": "staticwebassets\\Images\\f7b6361a-4625-4bd5-a2fa-b58ee023deee.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ArtisanBackEnd.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ArtisanBackEnd.props",
+      "PackagePath": "build\\ArtisanBackEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ArtisanBackEnd.props",
+      "PackagePath": "buildMultiTargeting\\ArtisanBackEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ArtisanBackEnd.props",
+      "PackagePath": "buildTransitive\\ArtisanBackEnd.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

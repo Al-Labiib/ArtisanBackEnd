@@ -40,17 +40,58 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse DeleteContract(int id)
         {
-            throw new NotImplementedException();
+            var contract = _contractRepository.Get<Contract>(x => x.Id == id);
+
+            _contractRepository.Delete<Contract>(contract);
+            _contractRepository.SaveChanges();
+
+            return new BaseResponse
+            {
+                Message = " Contract deleted sucessfully",
+                Status = true
+            };
         }
 
         public ContractResponseModel GetContractById(int id)
         {
-            throw new NotImplementedException();
+            var contract = _contractRepository.Get<Contract>(x => x.Id == id);
+
+            if (contract == null)
+            {
+                return new ContractResponseModel
+                {
+                    Message = $"No record found for Contract with Id {id}",
+                    Status = false
+                };
+
+            }
+            return new ContractResponseModel
+            {
+                ArtisanId = contract.ArtisanId,
+                Artisan = contract.Artisan,
+                CustomerId = contract.CustomerId,
+                Customer = contract.Customer,
+                ContractStatus = contract.ContractStatus,
+                PaymentStatus = contract.PaymentStatus,
+                Status = true
+            };
+            
         }
 
         public IList<ContractResponseModel> GetContracts()
         {
-            throw new NotImplementedException();
+            var contract = _contractRepository.GetAllContracts();
+
+            var contractResponse = contract.Select(x => new ContractResponseModel
+            {                
+                CustomerId = x.CustomerId,
+                Customer = x.Customer,
+                ArtisanId = x.ArtisanId,
+                Artisan = x.Artisan,
+                PaymentStatus = x.PaymentStatus,
+            }).ToList();
+
+            return contractResponse;
         }
 
         public BaseResponse PayForContract(int id)
@@ -60,7 +101,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse UpdateContract(int id, UpdateContractRequestModel request)
         {
-            var contract = _contractRepository.GetContract(x=> x.Id == id);
+            var contract = _contractRepository.Get<Contract>(x=> x.Id == id);
             if(contract.ContractStatus != (ContractStatus)1)
             {
                 return new BaseResponse
@@ -81,7 +122,7 @@ namespace ArtisanBackEnd.Application.Services
             if(updateContract == null)
             {
                 return new BaseResponse
-                { 
+                {
                     Message = "Record Update Not Succcessful",
                     Status = true
                 };

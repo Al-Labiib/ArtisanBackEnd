@@ -1,5 +1,6 @@
 C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\appsettings.json
+C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\ArtisanBackEnd.staticwebassets.runtime.json
 C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\ArtisanBackEnd.exe
 C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\ArtisanBackEnd.deps.json
 C:\Users\User\Desktop\ArtisanBackEnd\bin\Debug\net7.0\ArtisanBackEnd.runtimeconfig.json

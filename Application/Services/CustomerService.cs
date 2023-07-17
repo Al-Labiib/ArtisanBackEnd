@@ -74,7 +74,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse DeleteCustomer(int id)
         {
-            var customer = _customerRepository.GetCustomer(x => x.Id == id);
+            var customer = _customerRepository.Get<Customer>(x => x.Id == id);
 
             _customerRepository.Delete<Customer>(customer);
             _customerRepository.Delete<User>(customer.User);
@@ -90,7 +90,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public CustomerResponseModel GetCustomerByCustomerNumber(string customerNumber)
         {
-            var customer = _customerRepository.GetCustomer(x=> x.CustomerNumber == customerNumber);
+            var customer = _customerRepository.Get<Customer>(x=> x.CustomerNumber == customerNumber);
             if(customer == null)
             {
                 return new CustomerResponseModel
@@ -120,7 +120,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public CustomerResponseModel GetCustomerById(int id)
         {
-            var customer = _customerRepository.GetCustomer(x => x.Id == id);
+            var customer = _customerRepository.Get<Customer>(x => x.Id == id);
 
             if (customer == null)
             {
@@ -174,7 +174,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse UpdateCustomer(int id, UpdateCustomerRequestModel request)
         {
-            var customer = _customerRepository.GetCustomer(x => x.Id == id);
+            var customer = _customerRepository.Get<Customer>(x => x.Id == id);
 
             customer.User.PhoneNumber = request.PhoneNumber;
             customer.User.Address = request.Address;
@@ -199,7 +199,7 @@ namespace ArtisanBackEnd.Application.Services
 
         public BaseResponse UpdatePassword(int id, UpdatePasswordRequestModel password)
         {
-            var customer = _customerRepository.GetCustomer(x => x.Id == id);
+            var customer = _customerRepository.Get<Customer>(x => x.Id == id);
 
             if (password.Password != null)
             {

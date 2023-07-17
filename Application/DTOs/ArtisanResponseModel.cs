@@ -17,7 +17,7 @@ namespace ArtisanBackEnd.Application.DTOs
         public Address Address { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string? ProfileImage { get; set; }
-        public string? CertificateImage {get; set;}
+        public string CertificateImage {get; set;}
         public JobCategory JobCategory {get; set;}
     }
 }

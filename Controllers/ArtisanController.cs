@@ -19,24 +19,37 @@ namespace ArtisanBackEnd.Controllers
         [HttpPost("CreateArtisan")]
         public IActionResult CreateArtisan([FromForm] CreateArtisanRequestModel request)
         {
+            BaseResponse response = new BaseResponse();
+            try
+            {
+                System.Console.WriteLine(request.CertificateImage);
             var forms = HttpContext.Request.Form;
             if( forms != null && forms.Count > 0)
             {
                 string imageDirectory = Path.Combine(_webHostEnviroment.WebRootPath, "Images");
                 Directory.CreateDirectory(imageDirectory);
-                foreach(var file in forms.Files)
-                {
-                    FileInfo info = new FileInfo(file.FileName);
-                    string imageName = Guid.NewGuid().ToString() + info.Extension;
-                    string path = Path.Combine(imageDirectory, imageName);
+                    FileInfo pinfo = new FileInfo(forms.Files[0].FileName);
+                    FileInfo cinfo = new FileInfo(forms.Files[1].FileName);
+                    string pimageName = Guid.NewGuid().ToString() + pinfo.Extension;
+                    string cimageName = Guid.NewGuid().ToString() + cinfo.Extension;
+                    string path = Path.Combine(imageDirectory, pimageName);
                     using (var fileStream = new FileStream(path, FileMode.Create))
                     {
-                        file.CopyTo(fileStream);
+                        forms.Files[0].CopyTo(fileStream);
                     }
-                    path = imageName;
-                }
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        forms.Files[1].CopyTo(fileStream);
+                    }
+                    request.ProfileImage = pimageName;
+                    request.CertificateImage = pimageName;
             }
-            var response = _artisanService.CreateArtisan(request);
+              response = _artisanService.CreateArtisan(request);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return response.Status? Ok(response) : BadRequest(response);
         }
         [HttpGet("getArtisanById/id")]
